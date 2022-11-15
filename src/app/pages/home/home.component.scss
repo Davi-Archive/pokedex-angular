@@ -1,0 +1,23 @@
+.containerContent {
+  padding: 1rem;
+
+  h1 {
+    margin: 0;
+  }
+
+  ol {
+    padding: 0;
+    display: grid;
+    list-style: none;
+    grid-template-columns: 1fr 1fr;
+
+    li {
+      margin: 0.5rem;
+      padding: 2rem 1rem;
+      background-color: var(--green);
+      color: var(--white);
+      border-radius: 1rem;
+      height: 100px;
+    }
+  }
+}

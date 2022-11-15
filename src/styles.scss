@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+@import "./assets/fonts/fonts.scss";
+
+:root {
+  --fontRegular: "Futura Regular";
+  --fontBold: "Futura Bold";
+  --fontLight: "Futura Light";
+
+  //colors global variables
+
+  --green: #14a06f;
+  --white: #fff;
+
+  --breakpointDesktop: "992px";
+}
+
+* {
+  margin: 0;
+  border: 0;
+  font-family: var(--fontRegular);
+  font-size: 16px;
+}

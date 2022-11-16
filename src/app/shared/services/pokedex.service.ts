@@ -12,7 +12,6 @@ export class PokedexService {
   ) { }
 
   public get(url: string): Promise<any> {
-    console.log(url)
     return new Promise((resolve, reject) => {
       this.http.get(this.getUrl(url)).subscribe({
         next: (v) => resolve(v),
@@ -21,8 +20,17 @@ export class PokedexService {
     });
   }
 
+  
 
   private getUrl(url: string): string {
+    console.log(`Making a requisition to API: ${this.pokedexUrlApi}${url}`)
     return `${this.pokedexUrlApi}${url}`
   }
 }
+
+// Lista de Pokemons
+//https://pokeapi.co/api/v2/pokemon/
+
+
+// Pokemon por nome
+//https://pokeapi.co/api/v2/pokemon/ditto

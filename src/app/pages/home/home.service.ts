@@ -6,8 +6,12 @@ import { PokedexService } from 'src/app/shared/services/pokedex.service';
 })
 export class HomeService extends PokedexService {
 
-  public getPokeList():Promise<any>{
+  public getPokeList(url?: string): Promise<any> {
+    if (url) {
+      return this.get(url);
+    }
     return this.get('pokemon');
   }
+
 
 }

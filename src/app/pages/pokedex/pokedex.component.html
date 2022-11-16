@@ -1,0 +1,31 @@
+<section class="containerPokedex">
+  <div class="pokemonInfo">
+    <img [src]="pokemonFrontImage" alt="pokemon image" />
+    <div class="pokemonNome">
+      <strong>Nome:</strong>
+      <p>{{ pokemonFullData.name }}</p>
+    </div>
+  </div>
+  <h3>pokemon type:</h3>
+  <div class="pokemonType" *ngFor="let pokemonType of pokemonTypes">
+    <p>{{ pokemonType.type.name }}</p>
+  </div>
+  <div class="pokeMoveContainer">
+    <h3>move types</h3>
+    <div class="pokeMoves">
+      <div class="move" *ngFor="let move of pokemonFullData.moves">
+        <p>{{ move.move.name }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="pokeGameVersion">
+    <h3>Which games does it appear?</h3>
+    <div
+      class="gameVersion"
+      *ngFor="let gameVersion of pokemonFullData.game_indices"
+    >
+      <p>{{ gameVersion.version.name }}</p>
+    </div>
+  </div>
+</section>

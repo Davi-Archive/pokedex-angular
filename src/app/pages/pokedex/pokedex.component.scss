@@ -1,0 +1,23 @@
+.containerPokedex {
+  .pokeMoveContainer {
+    .pokeMoves {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      max-height: 200px;
+      overflow-x: auto;
+
+      .move {
+        display: flex;
+        text-transform: capitalize;
+      }
+    }
+  }
+
+  .pokeGameVersion{
+      display:grid;
+      grid-template-columns: 1fr 1fr 1fr;
+    .gameVersion{
+        text-transform: capitalize;
+    }
+  }
+}

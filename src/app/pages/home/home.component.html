@@ -1,11 +1,33 @@
 <section class="containerContent">
-  <h1>Pokedéx</h1>
-  <ol>
-    <li>Bulbasaur</li>
-    <li>Ivysaur</li>
-    <li>Venusar</li>
-    <li>Charmander</li>
-    <li>Charmeleon</li>
-    <li>Charizard</li>
-  </ol>
+  <div class="topContent">
+    <div class="circle1"></div>
+    <div class="innerBalls">
+      <div class="circle2"></div>
+      <div class="circle3"></div>
+      <div class="circle4"></div>
+    </div>
+    <button>Power Up</button>
+  </div>
+
+  <div class="bottomFrame">
+    <h1>Pokedéx</h1>
+    <ul *ngIf="pokemonListFromApi">
+      <div
+      (click)="linkToSeeSpecificPokemon(pokemon.name)"
+      *ngFor="let pokemon of pokemonListFromApi"
+      class="pokemonList"
+      >
+        <li>{{ pokemon.name }}</li>
+      </div>
+    </ul>
+  </div>
+  <div class="bottomControls">
+    <div class="buttonArray">
+      <div class="arrow" *ngIf="previousButtonUrl" (click)="buttonClickPreviousPage()"></div>
+      <div class="button1"></div>
+      <div class="button2"></div>
+      <div class="arrow rotate" *ngIf="nextButtonUrl" (click)="buttonClickNextPage()"></div>
+    </div>
+  </div>
+
 </section>

@@ -1,23 +1,138 @@
-.containerPokedex {
-  .pokeMoveContainer {
-    .pokeMoves {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      max-height: 200px;
-      overflow-x: auto;
+.containerContent {
+  padding: 1rem;
 
-      .move {
-        display: flex;
+  .topContent {
+    background-color: var(--red1);
+    display: flex;
+    height: 7rem;
+    flex: 1;
+    border-radius: 50px 50px 0 0;
+    position: relative;
+    align-items: center;
+    justify-content: space-around;
+
+    .circle1 {
+      width: 70px;
+      height: 70px;
+      border-radius: 100px;
+      margin-left: 20px;
+      background: radial-gradient(circle, #ccffff, #34e4ea, #0496ff);
+      border: 1px solid var(--black);
+    }
+    .innerBalls {
+      width: 50%;
+      display: flex;
+      margin-bottom: auto;
+      margin-top: 10%;
+
+      .circle2,
+      .circle3,
+      .circle4 {
+        width: 30px;
+        height: 30px;
+        border-radius: 100px;
+        border: 1px solid var(--black);
+        margin-left: 10px;
+      }
+
+      .circle2 {
+        background: repeating-radial-gradient(
+          circle at 10px 10px,
+          #ffb3b3,
+          var(--red2)
+        );
+      }
+      .circle3 {
+        background: repeating-radial-gradient(
+          circle at 10px 10px,
+          yellow,
+          #dd6031
+        );
+      }
+      .circle4 {
+        background: repeating-radial-gradient(
+          circle at 10px 10px,
+          lime,
+          var(--green)
+        );
+      }
+    }
+    button {
+      border-radius: 10px;
+      background-color: var(--green);
+      margin-right: 20px;
+      background: url("../../../assets/images/powerUp.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      height: 60px;
+      color: var(--transparent);
+    }
+  }
+
+  .bottomFrame {
+    background-color: var(--red2);
+    text-align: center;
+
+    .pokemonInfo {
+      display: flex;
+      .descriptionText {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+    }
+
+    .gameVersionContainer {
+      .gameVersionList{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        background-color: var(--white);
+        margin: 0.5rem;
+        text-transform: capitalize;
+        max-height: 200px;
+        overflow-y: auto;
+      }
+    }
+
+    .pokeMoveContainer {
+      .pokeMoves {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        padding: 0;
+        margin: 0.5rem;
+        background-color: var(--white);
+        max-height: 200px;
+        overflow-y: auto;
         text-transform: capitalize;
       }
     }
   }
 
-  .pokeGameVersion{
-      display:grid;
-      grid-template-columns: 1fr 1fr 1fr;
-    .gameVersion{
-        text-transform: capitalize;
+  .bottomControls {
+    margin-top: -10px;
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--red2);
+    height: 150px;
+    border-radius: 0 0 30px 30px;
+    margin-bottom: 50px;
+    .buttonArray {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 2fr;
+      margin: 0 20px;
+      text-align: center;
+      .arrow {
+        background-image: url("../../../assets/images/seta.png");
+        background-size: contain;
+        height: 80px;
+        background-repeat: no-repeat;
+        background-color: var(--red2);
+        &.rotate {
+          transform: rotate(180deg);
+        }
+      }
     }
   }
 }

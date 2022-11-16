@@ -1,31 +1,51 @@
-<section class="containerPokedex">
-  <div class="pokemonInfo">
-    <img [src]="pokemonFrontImage" alt="pokemon image" />
-    <div class="pokemonNome">
-      <strong>Nome:</strong>
-      <p>{{ pokemonFullData.name }}</p>
+<section class="containerContent">
+  <div class="topContent">
+    <div class="circle1"></div>
+    <div class="innerBalls">
+      <div class="circle2"></div>
+      <div class="circle3"></div>
+      <div class="circle4"></div>
     </div>
+    <button>Power Up</button>
   </div>
-  <h3>pokemon type:</h3>
-  <div class="pokemonType" *ngFor="let pokemonType of pokemonTypes">
-    <p>{{ pokemonType.type.name }}</p>
-  </div>
-  <div class="pokeMoveContainer">
-    <h3>move types</h3>
-    <div class="pokeMoves">
-      <div class="move" *ngFor="let move of pokemonFullData.moves">
-        <p>{{ move.move.name }}</p>
+
+  <div class="bottomFrame">
+    <div class="pokemonInfo">
+      <img [src]="pokemonFrontImage" alt="pokemon image" />
+      <div class="descriptionText">
+        <h1>Nome: {{ pokemonFullData.name }}</h1>
+        <h3>pokemon type:</h3>
+        <div class="pokemonType" *ngFor="let pokemonType of pokemonTypes">
+          <p>{{ pokemonType.type.name }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="pokeMoveContainer">
+      <h3>move types</h3>
+      <div class="pokeMoves">
+        <div class="move" *ngFor="let move of pokemonFullData.moves">
+          <p>{{ move.move.name }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="gameVersionContainer">
+      <h3>Which games does it appear?</h3>
+      <div class="gameVersionList">
+        <div
+          class="listGameVersion"
+          *ngFor="let gameVersion of pokemonFullData.game_indices"
+        >
+          <p>{{ gameVersion.version.name }}</p>
+        </div>
       </div>
     </div>
   </div>
-
-  <div class="pokeGameVersion">
-    <h3>Which games does it appear?</h3>
-    <div
-      class="gameVersion"
-      *ngFor="let gameVersion of pokemonFullData.game_indices"
-    >
-      <p>{{ gameVersion.version.name }}</p>
+  <div class="bottomControls">
+    <div class="buttonArray">
+      <div class="arrow"></div>
+      <div class="button1"></div>
+      <div class="button2"></div>
+      <!--       <div class="arrow rotate" *ngIf="nextButtonUrl" (click)="buttonClickNextPage()"></div> -->
     </div>
   </div>
 </section>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { OnePokemonService } from './one-pokemon.service';
 
 @Component({
@@ -16,7 +16,8 @@ export class PokedexComponent implements OnInit {
 
   constructor(
     private actualRouteService: ActivatedRoute,
-    private onePokemonService: OnePokemonService
+    private onePokemonService: OnePokemonService,
+    private router: Router
   ) {
 
   }
@@ -35,5 +36,9 @@ export class PokedexComponent implements OnInit {
     this.pokemonStats = data?.stats;
     this.pokemonFullData = data;
     console.log(data)
+  }
+
+  public goBackToStartPage(): void {
+    this.router.navigateByUrl('/');
   }
 }

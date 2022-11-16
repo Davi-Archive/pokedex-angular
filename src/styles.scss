@@ -1,6 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 @import "./assets/fonts/fonts.scss";
 
+$breakpointDesktop: 992px;
+
 :root {
   --fontRegular: "Futura Regular";
   --fontBold: "Futura Bold";
@@ -24,4 +26,13 @@
   border: 0;
   font-family: var(--fontRegular);
   font-size: 16px;
+}
+body{
+    background-image: url("./assets/images/pokemon-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.desktop{
+  max-width: 40%;
 }

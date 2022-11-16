@@ -1,6 +1,12 @@
+@import "../../../styles.scss";
+
 .containerContent {
   padding: 1rem;
 
+  @media screen and (min-width: $breakpointDesktop) {
+    margin: auto;
+    width: 40%;
+  }
   .topContent {
     background-color: var(--red1);
     display: flex;
@@ -82,7 +88,7 @@
     }
 
     .gameVersionContainer {
-      .gameVersionList{
+      .gameVersionList {
         display: grid;
         grid-template-columns: 1fr 1fr;
         background-color: var(--white);
